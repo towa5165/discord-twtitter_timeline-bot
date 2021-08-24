@@ -1,2 +1,0 @@
-# discord-twtitter_timeline-bot
-GAS用のTwitterの特定ユーザーのつぶやきを取得してDiscordウェブフックに投げるbot
