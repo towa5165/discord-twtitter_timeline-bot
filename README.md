@@ -16,35 +16,40 @@ GASでTwitter API(Stantard v1.1)を通して特定ユーザーの最新のつぶ
 
 #### リプライ先のテキストをEmbedsのフィールドに表示する
 <details><summary>リプライツリー投稿の埋め込み</summary><div>
-
-
+  
+  フィールドタイトルはリプライ同様`@スクリーンネーム`で表示します。
+  
+  ![リプライツリー投稿](https://github.com/towa5165/discord-twtitter_timeline-bot/blob/img/reply.png)
 </div></details>
 
 #### 引用元もEmbedsのフィールドに表示する
 <details><summary>引用の埋め込み</summary><div>
-
-
+  
+  フィールドタイトルはユーザー名を取得し表示します。
+  
+  ![引用](https://raw.githubusercontent.com/towa5165/discord-twtitter_timeline-bot/img/quote.png)
 </div></details>
 
 #### tweetに添付された画像をデフォルト生成されるEmbedsと同様に表示する
 
 #### GIF動画が添付されている場合、直接的なURLを取り出して続けて送信する
 <details><summary>GIFの直リン</summary><div>
-
-Embedsでは動画等は埋め込めないがURL先が動画であればDiscordクライアントがプレビューしてくれる  
-ブラウザに切り替えなくてもDiscordのままGIF動画をチェックできる
-
-
+  
+  Embedsでは動画等は埋め込めませんがURL先が動画であればDiscordクライアントがプレビューしてくれます  
+  ブラウザに切り替えなくてもDiscordのままGIF動画をチェックできます。  
+  GIF以外の動画は未対応です。
+  
+  ![GIF直リン](https://raw.githubusercontent.com/towa5165/discord-twtitter_timeline-bot/img/gif.png)
 </div></details>
 
 
 #### YouTubeへのリンクがある場合、リンクを続けて送信する
 <details><summary>YouTubeへのリンク</summary><div>
-
-YouTubeへのリンクを送信すると専用の埋め込みが作成される  
-こちらもDiscord側で視聴できるようになる
-
-
+  
+  YouTubeへのリンクを送信すると専用の埋め込みが作成されます  
+  こちらもDiscord側で視聴できるようになります。
+  
+  ![YouTubeリンク](https://raw.githubusercontent.com/towa5165/discord-twtitter_timeline-bot/img/youtube.png)
 </div></details>
 
 
@@ -88,6 +93,10 @@ Twitterオブジェクト中にユーザーが入力したurlが格納される�
 - discordウェブフックへの送信時にエラーが起きたIDをシートに記録しない  
 稀にdiscordウェブフック側がタイムアウトして受け取れないことがあります。そういったtweetのIDをシートに保存するリストから除去しています。  
 
+- Embedsの色やフッター  
+色は指定せずフッターはタイムスタンプのみいれてます。  
+自由に変更してください。
+
 - リクエストのカスタマイズ  
 `twitterDefaultQuery()`をいじればTwitterAPIのリクエストの変更が可能です。  
 コードを見ていただければわかりますが、オブジェクトのキーを取得してリクエストパラメータを作成しています。  
@@ -101,6 +110,6 @@ Twitterオブジェクト中にユーザーが入力したurlが格納される�
 
 ## 現状把握している問題点
 - たまに通信エラーになる  
-回避不能のため諦めてます。  
+対応は諦めてます。  
 discordウェブフック側も稀に発生しますし短縮URLリダイレクト先チェックでも発生します。  
 > Exception: 使用できないアドレス: https～～
