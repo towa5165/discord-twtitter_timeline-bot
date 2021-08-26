@@ -78,7 +78,7 @@ function createEmbedsField(tweet) {
     var specifyTweetQuery = {
       screen_name : tweet['in_reply_to_screen_name'],
       exclude_replies : 'false',
-      max_id : tweet['in_reply_to_status_id'],
+      max_id : tweet['in_reply_to_status_id_str'],
       count : 1
     }
     try {
